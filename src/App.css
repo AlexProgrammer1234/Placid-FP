@@ -1,0 +1,13 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    38deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  filter: grayscale(0.3);
+}
