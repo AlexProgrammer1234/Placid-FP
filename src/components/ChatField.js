@@ -1,8 +1,11 @@
 import { Paper } from "@mui/material";
 import Message from "./Message";
 import InputField from "./InputField";
+import { useState } from "react";
 
 export default function ChatField() {
+  const [messages, setMessages] = useState([]);
+
   return (
     <Paper
       elevation={0}
@@ -30,7 +33,7 @@ export default function ChatField() {
       >
         <Message />
       </Paper>
-      <InputField />
+      <InputField setMessages={setMessages} messages={messages} />
     </Paper>
   );
 }
