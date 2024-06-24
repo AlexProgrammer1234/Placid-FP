@@ -16,13 +16,14 @@ export default function InputField() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#2121217a",
+          backgroundColor: "#212121be",
           position: "absolute",
           bottom: "0",
           right: "0",
           left: "0",
           opacity: "0.9",
-          margin: "10px 10px 10px 5px",
+          margin: "20px 20px 20px 15px",
+          boxShadow: "0 0 8px #212121d4",
         }}
         elevation={6}
       >

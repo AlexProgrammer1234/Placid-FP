@@ -21,8 +21,11 @@ export default function ChatField() {
           boxShadow: "0 0 8px #212121a1",
           padding: "10px",
           overflow: "auto",
-          marginBottom: "105px",
+          paddingBottom: "105px",
           height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "end",
         }}
       >
         <Message />

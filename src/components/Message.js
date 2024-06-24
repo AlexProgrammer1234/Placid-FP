@@ -9,7 +9,8 @@ export default function Message() {
         boxShadow: "0 0 8px #212121d4",
         minWidth: "100px",
         marginBottom: "10px",
-        padding: "20px",
+        padding: "10px",
+        wordWrap: "break-word",
       }}
     >
       <p className="secondaryData">Test</p>
