@@ -34,7 +34,6 @@ export default function ChatField() {
         {messages?.map((e, index) => {
           return <Message key={index} name={e[0]} text={e[1]} />;
         })}
-        <Message name={"ewwer"} text={"ewdewew"}/>
       </Paper>
       <InputField setMessages={setMessages} messages={messages} />
     </Paper>
