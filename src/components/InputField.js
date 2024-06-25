@@ -5,7 +5,7 @@ import { database } from "./firebaseConfig";
 import { ref, set, onValue } from "firebase/database";
 import { useEffect, useRef } from "react";
 
-export default function InputField({ setMessages, messages }) {
+export default function InputField({ setMessages, messages, user }) {
   const name = useRef(null);
   const text = useRef(null);
   useEffect(() => {
@@ -18,19 +18,21 @@ export default function InputField({ setMessages, messages }) {
   }, []);
 
   function addMessage() {
-    if (name.current.value && text.current.value) {
-      const messagesRef = ref(database, "arrayData");
-      let updatedMessages;
-      if (messages) {
-        updatedMessages = [
-          ...messages,
-          [name.current.value, text.current.value],
-        ];
-      } else {
-        updatedMessages = [[name.current.value, text.current.value]];
+    if (user) {
+      if (text.current.value) {
+        const messagesRef = ref(database, "arrayData");
+        let updatedMessages;
+        if (messages) {
+          updatedMessages = [
+            ...messages,
+            [user.displayName, text.current.value, user.uid],
+          ];
+        } else {
+          updatedMessages = [[user.displayName, text.current.value, user.uid]];
+        }
+        set(messagesRef, updatedMessages);
+        text.current.value = "";
       }
-      set(messagesRef, updatedMessages);
-      text.current.value = "";
     }
   }
   return (
@@ -42,7 +44,7 @@ export default function InputField({ setMessages, messages }) {
     >
       <Paper
         sx={{
-          padding: "10px",
+          padding: "10px 0 10px 0",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -52,30 +54,15 @@ export default function InputField({ setMessages, messages }) {
           right: "0",
           left: "0",
           opacity: "0.9",
-          margin: "20px 20px 20px 15px",
+          margin: "20px 20px 20px 23vw",
           boxShadow: "0 0 8px #212121d4",
         }}
         elevation={6}
       >
         <TextField
           sx={{
-            width: "30%",
-            "& input": { color: "white" },
-            "& label": { color: "white" },
-            "& .MuiOutlinedInput-root": {
-              "& fieldset": { borderColor: "gray" },
-              "&:hover fieldset": { borderColor: "white" },
-            },
-          }}
-          variant="outlined"
-          label="Name"
-          InputLabelProps={{ style: { color: "white" } }}
-          inputRef={name}
-        />
-        <TextField
-          sx={{
             marginLeft: "15px",
-            width: "80%",
+            width: "100%",
             "& input": { color: "white" },
             "& label": { color: "white" },
             "& .MuiOutlinedInput-root": {
