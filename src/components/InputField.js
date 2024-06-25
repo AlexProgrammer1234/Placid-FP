@@ -12,18 +12,23 @@ export default function InputField({ setMessages, messages }) {
     const messagesRef = ref(database, "arrayData");
 
     onValue(messagesRef, (snapshot) => {
-      const messagesData = snapshot.val() || [];
+      const messagesData = snapshot.val();
       setMessages(messagesData);
     });
-  });
+  }, []);
 
   function addMessage() {
     if (name.current.value && text.current.value) {
       const messagesRef = ref(database, "arrayData");
-      const updatedMessages = [
-        ...messages,
-        [name.current.value, text.current.value],
-      ];
+      let updatedMessages;
+      if (messages) {
+        updatedMessages = [
+          ...messages,
+          [name.current.value, text.current.value],
+        ];
+      } else {
+        updatedMessages = [[name.current.value, text.current.value]];
+      }
       set(messagesRef, updatedMessages);
       text.current.value = "";
     }
