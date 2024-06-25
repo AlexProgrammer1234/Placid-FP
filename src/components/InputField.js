@@ -1,8 +1,38 @@
 import { Paper, TextField, IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import "./InputField.css";
+import { database } from "./firebaseConfig";
+import { ref, set, onValue } from "firebase/database";
+import { useEffect, useRef } from "react";
 
-export default function InputField() {
+export default function InputField({ setMessages, messages }) {
+  const name = useRef(null);
+  const text = useRef(null);
+  useEffect(() => {
+    const messagesRef = ref(database, "arrayData");
+
+    onValue(messagesRef, (snapshot) => {
+      const messagesData = snapshot.val();
+      setMessages(messagesData);
+    });
+  }, []);
+
+  function addMessage() {
+    if (name.current.value && text.current.value) {
+      const messagesRef = ref(database, "arrayData");
+      let updatedMessages;
+      if (messages) {
+        updatedMessages = [
+          ...messages,
+          [name.current.value, text.current.value],
+        ];
+      } else {
+        updatedMessages = [[name.current.value, text.current.value]];
+      }
+      set(messagesRef, updatedMessages);
+      text.current.value = "";
+    }
+  }
   return (
     <form
       onSubmit={(e) => {
@@ -40,6 +70,7 @@ export default function InputField() {
           variant="outlined"
           label="Name"
           InputLabelProps={{ style: { color: "white" } }}
+          inputRef={name}
         />
         <TextField
           sx={{
@@ -55,11 +86,13 @@ export default function InputField() {
           variant="outlined"
           label="Message"
           InputLabelProps={{ style: { color: "white" } }}
+          inputRef={text}
         />
         <IconButton
           aria-label="delete"
           sx={{ marginLeft: "15px", color: "white", padding: "20px" }}
           type="submit"
+          onClick={addMessage}
         >
           <SendIcon />
         </IconButton>
