@@ -2,7 +2,6 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 20% 80%;
   background: rgb(63, 94, 251);
   background: linear-gradient(
     38deg,
