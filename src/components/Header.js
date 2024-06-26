@@ -18,7 +18,7 @@ export default function Header({ user }) {
         alignItems: "center",
       }}
     >
-      <p className="userName">{user?.displayName}Alex</p>
+      <p className="userName">{user?.displayName}</p>
       <Button
         variant="contained"
         sx={{

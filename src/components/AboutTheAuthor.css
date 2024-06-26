@@ -1,10 +1,5 @@
-.links{
-    position: absolute;
-    bottom: 10px;
-    right: 0;
-}
-
-.links *{
-    margin-right: 10px;
-    cursor: pointer;
+.links {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
 }
