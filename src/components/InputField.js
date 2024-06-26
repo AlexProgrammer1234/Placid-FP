@@ -9,30 +9,40 @@ export default function InputField({ setMessages, messages, user }) {
   const name = useRef(null);
   const text = useRef(null);
   useEffect(() => {
-    const messagesRef = ref(database, "arrayData");
+    try {
+      const messagesRef = ref(database, "arrayData");
 
-    onValue(messagesRef, (snapshot) => {
-      const messagesData = snapshot.val();
-      setMessages(messagesData);
-    });
+      onValue(messagesRef, (snapshot) => {
+        const messagesData = snapshot.val();
+        setMessages(messagesData);
+      });
+    } catch (e) {
+      console.error(e);
+    }
   }, []);
 
   function addMessage() {
-    if (user) {
-      if (text.current.value) {
-        const messagesRef = ref(database, "arrayData");
-        let updatedMessages;
-        if (messages) {
-          updatedMessages = [
-            ...messages,
-            [user.displayName, text.current.value, user.uid],
-          ];
-        } else {
-          updatedMessages = [[user.displayName, text.current.value, user.uid]];
+    try {
+      if (user) {
+        if (text.current.value) {
+          const messagesRef = ref(database, "arrayData");
+          let updatedMessages;
+          if (messages) {
+            updatedMessages = [
+              ...messages,
+              [user.displayName, text.current.value, user.uid],
+            ];
+          } else {
+            updatedMessages = [
+              [user.displayName, text.current.value, user.uid],
+            ];
+          }
+          set(messagesRef, updatedMessages);
+          text.current.value = "";
         }
-        set(messagesRef, updatedMessages);
-        text.current.value = "";
       }
+    } catch (e) {
+      console.error(e);
     }
   }
   return (
