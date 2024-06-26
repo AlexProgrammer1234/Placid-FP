@@ -27,9 +27,19 @@ export default function AboutTheAuthor() {
       </p>
       <div className="links">
         <a href="https://github.com/AlexProgrammer1234" target="_blank">
-        <IconButton sx={{ color: "white", marginRight: "10px" }}>
-          <GitHubIcon style={{ fontSize: "35px" }} />
-        </IconButton>
+          <IconButton sx={{ color: "white" }}>
+            <GitHubIcon style={{ fontSize: "30px" }} />
+          </IconButton>
+        </a>
+        <a href="https://classroom.google.com/c/NjIxNzEzMDc0ODU2" target="_blank">
+          <IconButton sx={{ color: "white" }}>
+            <SchoolIcon style={{ fontSize: "30px" }} />
+          </IconButton>
+        </a>
+        <a href="https://trello.com/invite/b/6edIIctf/ATTI985ae529e617def5ad5b4fbcc179cf93ECD37706/кобилянський-олексій-afe34-фінальний-проект" target="_blank">
+          <IconButton sx={{ color: "white", marginRight: "10px" }}>
+            <DashboardCustomizeIcon style={{ fontSize: "30px" }} />
+          </IconButton>
         </a>
       </div>
     </Paper>
