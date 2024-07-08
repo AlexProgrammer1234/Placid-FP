@@ -1,5 +1,5 @@
 import { Paper, Button } from "@mui/material";
-import { logout } from "./firebaseConfig";
+import { logout } from "../firebaseConfiguration/FirebaseConfig";
 import "./Header.css";
 
 export default function Header({ user }) {

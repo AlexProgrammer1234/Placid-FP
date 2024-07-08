@@ -1,5 +1,5 @@
 import { Button, Paper } from "@mui/material";
-import { signInWithGoogle } from "./firebaseConfig";
+import { signInWithGoogle } from "../firebaseConfiguration/FirebaseConfig";
 
 export default function SignInWindow() {
   return (

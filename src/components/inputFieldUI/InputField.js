@@ -1,12 +1,11 @@
 import { Paper, TextField, IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import "./InputField.css";
-import { database } from "./firebaseConfig";
+import { database } from "../firebaseConfiguration/FirebaseConfig";
 import { ref, set, onValue } from "firebase/database";
 import { useEffect, useRef } from "react";
 
 export default function InputField({ setMessages, messages, user }) {
-  const name = useRef(null);
   const text = useRef(null);
   useEffect(() => {
     try {
