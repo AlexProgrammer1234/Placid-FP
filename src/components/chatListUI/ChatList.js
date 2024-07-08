@@ -21,8 +21,8 @@ export default function ChatList() {
         width: "20vw",
       }}
     >
-      <NavLink className="chatListBtns" to={"chats/demo"}>
-        Test Chat
+      <NavLink className="chatListBtns" to={"chats/placidchat/demo"}>
+        Placid Chat
       </NavLink>
       <NavLink className="chatListBtns info" to={"info/author"}>
         About The Author

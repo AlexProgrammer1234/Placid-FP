@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import ChatField from "./components/chatFieldUI/ChatField";
+import PlacidChatField from "./components/chatFieldUI/PlacidChatField";
 import ChatList from "./components/chatListUI/ChatList";
 import AboutTheAuthor from "./components/aboutAuthorPage/AboutTheAuthor";
 import { auth } from "./components/firebaseConfiguration/FirebaseConfig";
@@ -14,14 +14,14 @@ function App() {
 
   return (
     <div className="App">
-      {!user ? (
+      {user ? (
         <>
           <Header user={user} />
           <ChatList />
           <Routes>
             <Route
-              path="chats/demo"
-              element={<ChatField user={user} />}
+              path="chats/placidchat/demo"
+              element={<PlacidChatField user={user} />}
             ></Route>
             <Route
               path="info/author"

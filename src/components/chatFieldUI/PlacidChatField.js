@@ -3,7 +3,7 @@ import Message from "../messageUI/Message";
 import InputField from "../inputFieldUI/InputField";
 import { useState } from "react";
 
-export default function ChatField({ user }) {
+export default function PlacidChatField({ user }) {
   const [messages, setMessages] = useState([]);
 
   return (
