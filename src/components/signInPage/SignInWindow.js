@@ -3,12 +3,12 @@ import { signInWithGoogle } from "../firebaseConfiguration/FirebaseConfig";
 
 export default function SignInWindow() {
   return (
-    <Paper
+    <Paper elevation={3}
       sx={{
-        backgroundColor: "#212121be",
-        boxShadow: "0 0 8px #212121d4",
+        backgroundColor: "rgba(255, 255, 255, 0.05)",
         position: "relative",
-        margin: "15px",
+        margin: "5px",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
       }}
     >
       <Button

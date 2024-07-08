@@ -9,10 +9,10 @@
 .secondaryData {
   font-size: 12px;
   text-align: end;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .primaryData {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
 }

@@ -4,8 +4,8 @@ export default function PageNotFound() {
   return (
     <Paper
       sx={{
-        backgroundColor: "#2121217a",
-        boxShadow: "0 0 8px #212121a1",
+        backgroundColor: "rgba(255, 255, 255, 0.01)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
         position: "relative",
         margin: "65px 5px 5px 5px",
         paddingLeft: "22vw",
