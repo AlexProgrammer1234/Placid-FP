@@ -2,11 +2,14 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  background: rgb(63, 94, 251);
+  background: rgb(13, 16, 38);
   background: linear-gradient(
-    38deg,
-    rgba(63, 94, 251, 1) 0%,
-    rgba(252, 70, 107, 1) 100%
+    132deg,
+    rgba(13, 16, 38, 1) 0%,
+    rgba(63, 30, 59, 1) 15%,
+    rgba(115, 44, 81, 1) 41%,
+    rgba(43, 69, 122, 1) 70%,
+    rgba(22, 35, 67, 1) 93%,
+    rgba(13, 16, 38, 1) 100%
   );
-  filter: grayscale(0.3);
 }

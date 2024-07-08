@@ -20,10 +20,11 @@ export default function PlacidChatField({ user }) {
       }}
     >
       <Paper
+      elevation={3}
         sx={{
           margin: "5px 5px 5px 5px",
-          backgroundColor: "#2121217a",
-          boxShadow: "0 0 8px #212121a1",
+          backgroundColor: "rgba(255, 255, 255, 0.01)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
           padding: "10px",
           overflow: "auto",
           paddingBottom: "105px",
@@ -32,6 +33,7 @@ export default function PlacidChatField({ user }) {
           flexDirection: "column",
           alignItems: "end",
           paddingLeft: "23vw",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
         }}
       >
         {messages?.map((e, index) => {

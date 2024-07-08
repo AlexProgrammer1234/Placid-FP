@@ -1,6 +1,5 @@
 import { Paper, TextField, IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import "./InputField.css";
 import { database } from "../firebaseConfiguration/FirebaseConfig";
 import { ref, set, onValue } from "firebase/database";
 import { useEffect, useRef } from "react";
@@ -57,22 +56,26 @@ export default function InputField({ setMessages, messages, user }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#212121be",
+          backgroundColor: "rgba(255, 255, 255, 0.05)",
           position: "absolute",
           bottom: "0",
           right: "0",
           left: "0",
           opacity: "0.9",
-          margin: "20px 20px 20px 23vw",
-          boxShadow: "0 0 8px #212121d4",
+          margin: "20px 15px 15px 23vw",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
         }}
-        elevation={6}
+        elevation={3}
       >
         <TextField
           sx={{
             marginLeft: "15px",
             width: "100%",
-            "& input": { color: "white" },
+            "& input": {
+              color: "white",
+              fontFamily: `"Ubuntu", sans-serif`,
+              fontStyle: "normal",
+            },
             "& label": { color: "white" },
             "& .MuiOutlinedInput-root": {
               "& fieldset": { borderColor: "gray" },
@@ -81,7 +84,13 @@ export default function InputField({ setMessages, messages, user }) {
           }}
           variant="outlined"
           label="Message"
-          InputLabelProps={{ style: { color: "white" } }}
+          InputLabelProps={{
+            style: {
+              color: "white",
+              fontFamily: `"Ubuntu", sans-serif`,
+              fontStyle: "normal",
+            },
+          }}
           inputRef={text}
         />
         <IconButton

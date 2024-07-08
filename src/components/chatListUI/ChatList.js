@@ -5,13 +5,14 @@ import "./ChatList.css";
 export default function ChatList() {
   return (
     <Paper
+    elevation={3}
       sx={{
-        margin: "70px 0 15px 15px",
+        margin: "70px 0 10px 15px",
         padding: "10px",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "#212121be",
-        boxShadow: "0 0 8px #212121d4",
+        backgroundColor: "rgba(255, 255, 255, 0.05)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
         overflow: "auto",
         position: "absolute",
         top: "5px",
