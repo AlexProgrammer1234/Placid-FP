@@ -1,9 +1,7 @@
 import { Paper } from "@mui/material";
 import "./Message.css";
 
-export default function Message({ name, text, color }) {
-  const time = new Date();
-
+export default function Message({ name, text, color, time }) {
   return (
     <Paper
       sx={{
@@ -23,7 +21,7 @@ export default function Message({ name, text, color }) {
     >
       <p className="secondaryData">{name}</p>
       <p className="primaryData">{text}</p>
-      <p className="secondaryData">{`${time.getHours()}:${time.getMinutes()}${time.getMinutes() === 0 ? "0" : ""}`}</p>
+      <p className="secondaryData">{time}</p>
     </Paper>
   );
 }

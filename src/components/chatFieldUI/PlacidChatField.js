@@ -20,7 +20,7 @@ export default function PlacidChatField({ user }) {
       }}
     >
       <Paper
-      elevation={3}
+        elevation={3}
         sx={{
           margin: "5px 5px 5px 5px",
           backgroundColor: "rgba(255, 255, 255, 0.01)",
@@ -33,7 +33,6 @@ export default function PlacidChatField({ user }) {
           flexDirection: "column",
           alignItems: "end",
           paddingLeft: "23vw",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
         }}
       >
         {messages?.map((e, index) => {
@@ -43,6 +42,7 @@ export default function PlacidChatField({ user }) {
               name={e[0]}
               text={e[1]}
               color={user.uid === e[2] ? "colorful" : "default"}
+              time={`${e[3]}:${e[4] < 10 ? `0${e[4]}` : e[4]}`}
             />
           );
         })}

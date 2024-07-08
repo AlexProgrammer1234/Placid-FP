@@ -8,7 +8,7 @@ export default function InputField({ setMessages, messages, user }) {
   const text = useRef(null);
   useEffect(() => {
     try {
-      const messagesRef = ref(database, "arrayData");
+      const messagesRef = ref(database, "placidChatData");
 
       onValue(messagesRef, (snapshot) => {
         const messagesData = snapshot.val();
@@ -23,16 +23,17 @@ export default function InputField({ setMessages, messages, user }) {
     try {
       if (user) {
         if (text.current.value) {
-          const messagesRef = ref(database, "arrayData");
+          const messagesRef = ref(database, "placidChatData");
+          let time = new Date()
           let updatedMessages;
           if (messages) {
             updatedMessages = [
               ...messages,
-              [user.displayName, text.current.value, user.uid],
+              [user.displayName, text.current.value, user.uid, time.getHours(), time.getMinutes()],
             ];
           } else {
             updatedMessages = [
-              [user.displayName, text.current.value, user.uid],
+              [user.displayName, text.current.value, user.uid, time.getHours(), time.getMinutes()],
             ];
           }
           set(messagesRef, updatedMessages);
