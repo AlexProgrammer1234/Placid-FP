@@ -1,6 +1,6 @@
 import { Paper } from "@mui/material";
-import Message from "./Message";
-import InputField from "./InputField";
+import Message from "../messageUI/Message";
+import InputField from "../inputFieldUI/InputField";
 import { useState } from "react";
 
 export default function ChatField({ user }) {

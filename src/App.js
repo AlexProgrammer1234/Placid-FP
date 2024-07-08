@@ -1,27 +1,35 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import ChatField from "./components/ChatField";
-import ChatList from "./components/ChatList";
-import AboutTheAuthor from "./components/AboutTheAuthor";
-import { auth } from "./components/firebaseConfig";
+import ChatField from "./components/chatFieldUI/ChatField";
+import ChatList from "./components/chatListUI/ChatList";
+import AboutTheAuthor from "./components/aboutAuthorPage/AboutTheAuthor";
+import { auth } from "./components/firebaseConfiguration/FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
-import SignInWindow from "./components/SignINWindow";
-import Header from "./components/Header";
+import SignInWindow from "./components/signInPage/SignInWindow";
+import Header from "./components/header/Header";
+import PageNotFound from "./components/404/404";
 
 function App() {
   const [user] = useAuthState(auth);
 
   return (
     <div className="App">
-      {user ? (
+      {!user ? (
         <>
-        <Header user={user}/>
+          <Header user={user} />
           <ChatList />
           <Routes>
-            <Route path="chats/testchat" element={<ChatField user={user}/>}></Route>
             <Route
-              path="info/abouttheauthor"
+              path="chats/demo"
+              element={<ChatField user={user} />}
+            ></Route>
+            <Route
+              path="info/author"
               element={<AboutTheAuthor />}
+            ></Route>
+            <Route
+              path="*"
+              element={<PageNotFound />}
             ></Route>
           </Routes>
         </>

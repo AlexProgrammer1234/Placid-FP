@@ -21,10 +21,10 @@ export default function ChatList() {
         width: "20vw",
       }}
     >
-      <NavLink className="chatListBtns" to={"chats/testchat"}>
+      <NavLink className="chatListBtns" to={"chats/demo"}>
         Test Chat
       </NavLink>
-      <NavLink className="chatListBtns info" to={"info/abouttheauthor"}>
+      <NavLink className="chatListBtns info" to={"info/author"}>
         About The Author
       </NavLink>
     </Paper>
