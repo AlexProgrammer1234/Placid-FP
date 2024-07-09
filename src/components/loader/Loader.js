@@ -2,7 +2,7 @@ import "./Loader.css";
 
 export default function Loader() {
   return (
-    <div class="mainWrapper">
+    <div className="mainWrapper">
       <svg className="logo"
         width="42"
         height="32"
@@ -263,8 +263,8 @@ export default function Loader() {
           </g>
         </g>
       </svg>
-      <div class="glitch-wrapper">
-        <div class="glitch" data-text="Placid">
+      <div className="glitch-wrapper">
+        <div className="glitch" data-text="Placid">
           Placid
         </div>
       </div>

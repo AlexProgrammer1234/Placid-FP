@@ -1,5 +1,13 @@
-.userName {
-  color: white;
-  margin-right: 30px;
-  text-transform: uppercase;
+.userPhoto {
+  height: 30px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 5px;
+  border: 5px solid rgba(255, 255, 255, 0);
+  transition-duration: 0.4s;
+}
+
+.userPhoto:hover {
+  cursor: pointer;
+  border: 5px solid rgba(255, 255, 255, 0.2);
 }
