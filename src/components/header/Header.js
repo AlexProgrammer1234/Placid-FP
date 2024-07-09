@@ -29,7 +29,7 @@ export default function Header({ user }) {
           <img
             onClick={showMenu}
             className="userPhoto"
-            src={user.photoURL}
+            src={user?.photoURL}
             alt="Account icon"
           />
         </div>
