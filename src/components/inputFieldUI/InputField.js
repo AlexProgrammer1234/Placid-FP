@@ -29,11 +29,11 @@ export default function InputField({ setMessages, messages, user }) {
           if (messages) {
             updatedMessages = [
               ...messages,
-              [user.displayName, text.current.value, user.uid, time.getHours(), time.getMinutes()],
+              [user.displayName, text.current.value, user.uid, time.getHours(), time.getMinutes(), user.photoURL],
             ];
           } else {
             updatedMessages = [
-              [user.displayName, text.current.value, user.uid, time.getHours(), time.getMinutes()],
+              [user.displayName, text.current.value, user.uid, time.getHours(), time.getMinutes(), user.photoURL],
             ];
           }
           set(messagesRef, updatedMessages);

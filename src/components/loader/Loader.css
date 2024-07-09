@@ -1,0 +1,168 @@
+body {
+  background-color: black;
+}
+
+.mainWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hideAnimation 0.5s ease 4.5s 1;
+}
+
+.logo {
+  width: clamp(200px, 20vw, 300px);
+  height: clamp(200px, 12vh, 250px);
+  animation: svgsmaller 2s ease-out 1 forwards;
+  margin-right: 10px;
+}
+
+.logo g #top {
+  opacity: 1;
+  animation: svganimtop 1s linear 1;
+}
+
+.logo g #bottom {
+  opacity: 1;
+  animation: svganimbottom 1s linear 1;
+}
+
+.glitch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #000000;
+}
+
+.glitch {
+  opacity: 0;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-10%, -50%);
+  font-size: clamp(30px, 5vw, 55px);
+  animation: h1anim 0.5s linear 1s 1 forwards;
+  z-index: 1;
+  letter-spacing: 3px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-left: 15px;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #00ffff;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
+    infinite;
+  color: #ff00ff;
+  z-index: -2;
+}
+
+@keyframes glitch-it {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes svganimtop {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-8%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes svganimbottom {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(8%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes svgsmaller {
+  0% {
+    scale: 1;
+    transform: translateX(0);
+  }
+  30% {
+    scale: 0.9;
+    transform: translateX(0);
+  }
+  40% {
+    scale: 0.9;
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+  100%{
+    margin-top: 5px;
+    scale: 0.4;
+    transform: translateX(-10vw);
+    opacity: 0.8;
+  }
+}
+
+@keyframes h1anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -43,6 +43,7 @@ export default function PlacidChatField({ user }) {
               text={e[1]}
               color={user.uid === e[2] ? "colorful" : "default"}
               time={`${e[3]}:${e[4] < 10 ? `0${e[4]}` : e[4]}`}
+              userAccountIcon={e[5]}
             />
           );
         })}
