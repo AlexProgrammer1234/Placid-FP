@@ -3,6 +3,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { database } from "../firebaseConfiguration/FirebaseConfig";
 import { ref, set, onValue } from "firebase/database";
 import { useEffect, useRef } from "react";
+import "./InputField.css";
 
 export default function InputField({ setMessages, messages, user }) {
   const text = useRef(null);
@@ -76,11 +77,11 @@ export default function InputField({ setMessages, messages, user }) {
           right: "0",
           left: "0",
           opacity: "0.9",
-          margin: "20px 15px 15px 23vw",
           border: "1px solid rgba(255, 255, 255, 0.1)",
           borderRadius: "50vh",
         }}
         elevation={3}
+        className="inputField"
       >
         <TextField
           sx={{

@@ -6,6 +6,9 @@
   border-radius: 4px;
   transition-duration: 0.2s;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
 }
 
 .chatListBtns:hover {
@@ -29,10 +32,16 @@
 .info::before {
   content: "";
   position: absolute;
-  height: 2px;
+  height: 3px;
   background-color: rgba(255, 255, 255, 0.2);
   top: -10px;
   left: 8px;
   right: 8px;
   border-radius: 2px;
+}
+
+@media (max-width: 1200px) {
+  .chatListBtns {
+    border-radius: 30%;
+  }
 }

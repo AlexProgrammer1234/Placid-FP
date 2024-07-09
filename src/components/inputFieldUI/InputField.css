@@ -1,0 +1,9 @@
+.inputField {
+  margin: 20px 15px 15px 23vw;
+}
+
+@media (max-width: 1200px) {
+  .inputField {
+    margin-left: 90px;
+  }
+}

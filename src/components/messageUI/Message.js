@@ -3,9 +3,20 @@ import "./Message.css";
 
 export default function Message({ name, text, color, time, userAccountIcon }) {
   return (
-    <div className="message">
+    <Paper
+      elevation={0}
+      sx={{
+        background: "none",
+        alignSelf: color === "colorful" ? "end" : "start",
+      }}
+      className="message"
+    >
       <div>
-        <img className="messageUserIcon" src={userAccountIcon} alt="Account icon" />
+        <img
+          className="messageUserIcon"
+          src={userAccountIcon}
+          alt="Account icon"
+        />
       </div>
       <Paper
         sx={{
@@ -20,13 +31,12 @@ export default function Message({ name, text, color, time, userAccountIcon }) {
           wordWrap: "break-word",
           display: "flex",
           flexDirection: "column",
-          alignSelf: color === "colorful" ? "end" : "start",
         }}
       >
         <p className="secondaryData">{name}</p>
         <p className="primaryData">{text}</p>
         <p className="secondaryData">{time}</p>
       </Paper>
-    </div>
+    </Paper>
   );
 }
