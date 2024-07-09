@@ -3,6 +3,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { database } from "../firebaseConfiguration/FirebaseConfig";
 import { ref, set, onValue } from "firebase/database";
 import { useEffect, useRef } from "react";
+import "./InputField.css";
 
 export default function InputField({ setMessages, messages, user }) {
   const text = useRef(null);
@@ -24,16 +25,30 @@ export default function InputField({ setMessages, messages, user }) {
       if (user) {
         if (text.current.value) {
           const messagesRef = ref(database, "placidChatData");
-          let time = new Date()
+          let time = new Date();
           let updatedMessages;
           if (messages) {
             updatedMessages = [
               ...messages,
-              [user.displayName, text.current.value, user.uid, time.getHours(), time.getMinutes(), user.photoURL],
+              [
+                user.displayName,
+                text.current.value,
+                user.uid,
+                time.getHours(),
+                time.getMinutes(),
+                user?.photoURL,
+              ],
             ];
           } else {
             updatedMessages = [
-              [user.displayName, text.current.value, user.uid, time.getHours(), time.getMinutes(), user.photoURL],
+              [
+                user.displayName,
+                text.current.value,
+                user.uid,
+                time.getHours(),
+                time.getMinutes(),
+                user?.photoURL,
+              ],
             ];
           }
           set(messagesRef, updatedMessages);
@@ -53,7 +68,6 @@ export default function InputField({ setMessages, messages, user }) {
     >
       <Paper
         sx={{
-          padding: "10px 0 10px 0",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -63,14 +77,15 @@ export default function InputField({ setMessages, messages, user }) {
           right: "0",
           left: "0",
           opacity: "0.9",
-          margin: "20px 15px 15px 23vw",
           border: "1px solid rgba(255, 255, 255, 0.1)",
+          borderRadius: "50vh",
         }}
         elevation={3}
+        className="inputField"
       >
         <TextField
           sx={{
-            marginLeft: "15px",
+            marginLeft: "5px",
             width: "100%",
             "& input": {
               color: "white",
@@ -81,6 +96,7 @@ export default function InputField({ setMessages, messages, user }) {
             "& .MuiOutlinedInput-root": {
               "& fieldset": { borderColor: "gray" },
               "&:hover fieldset": { borderColor: "white" },
+              borderRadius: "50vh",
             },
           }}
           variant="outlined"
@@ -93,10 +109,10 @@ export default function InputField({ setMessages, messages, user }) {
             },
           }}
           inputRef={text}
+          autoComplete="off"
         />
         <IconButton
-          aria-label="delete"
-          sx={{ marginLeft: "15px", color: "white", padding: "20px" }}
+          sx={{ marginLeft: "5px", color: "white", padding: "20px" }}
           type="submit"
           onClick={addMessage}
         >

@@ -1,10 +1,11 @@
-import { Paper } from "@mui/material";
+import { Paper, useMediaQuery } from "@mui/material";
 import Message from "../messageUI/Message";
 import InputField from "../inputFieldUI/InputField";
 import { useState } from "react";
 
 export default function PlacidChatField({ user }) {
   const [messages, setMessages] = useState([]);
+  const isSmallScreen = useMediaQuery("(max-width:1200px)");
 
   return (
     <Paper
@@ -32,7 +33,8 @@ export default function PlacidChatField({ user }) {
           display: "flex",
           flexDirection: "column",
           alignItems: "end",
-          paddingLeft: "23vw",
+          paddingLeft: isSmallScreen ? "10px" : "23vw",
+          marginLeft: isSmallScreen ? "80px" : "0",
         }}
       >
         {messages?.map((e, index) => {

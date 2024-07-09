@@ -2,12 +2,18 @@
   color: white;
   text-transform: uppercase;
   margin: 0;
-  text-align: end;
   margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .email {
   text-transform: none;
   margin-bottom: 15px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 1200px){
+  .userInfo{
+    font-size: 40px;
+  }
 }
