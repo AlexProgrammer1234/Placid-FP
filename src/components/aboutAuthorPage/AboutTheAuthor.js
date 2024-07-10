@@ -3,6 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import SchoolIcon from "@mui/icons-material/School";
 import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize";
 import "./AboutTheAuthor.css";
+import AmpliLogo from "../img/AmpliLogo.svg";
 
 export default function AboutTheAuthor() {
   const isSmallScreen = useMediaQuery("(max-width: 1200px)");
@@ -27,6 +28,9 @@ export default function AboutTheAuthor() {
       <p className="AuthorsData">
         <b>Group:</b> AFE_34
       </p>
+      <a href="https://ampli.com.ua" target="_blank" rel="noreferrer">
+        <img className="ampliLogo" src={AmpliLogo} alt="Ampli Logo" />
+      </a>
       <div className="links">
         <a
           href="https://github.com/AlexProgrammer1234"

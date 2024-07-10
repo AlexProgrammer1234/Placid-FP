@@ -22,7 +22,7 @@ export default function SignInWindow() {
       }}
     >
       <div className="logoBox">
-        <img src={logo} alt="Placid logo"></img>
+        <img className="signINWindowLogo" src={logo} alt="Placid logo"></img>
         <div className="glitchLogo" data-text="Placid">
           Placid
         </div>
