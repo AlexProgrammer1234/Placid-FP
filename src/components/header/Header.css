@@ -1,3 +1,19 @@
+.siteName {
+  margin-left: 5px;
+  color: white;
+  font-size: clamp(25px, 2vw, 30px);
+  cursor: pointer;
+  position: relative;
+  opacity: 0.8;
+  transition-duration: 0.5s;
+}
+
+.siteName:hover {
+  background: linear-gradient(145deg, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .userPhoto {
   height: 30px;
   border-radius: 50%;
@@ -10,4 +26,17 @@
 .userPhoto:hover {
   cursor: pointer;
   border: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+.siteLogoBox {
+  display: flex;
+}
+
+.headerLogo {
+  width: 45px;
+  margin-left: 10px;
+}
+
+.homeLink{
+  text-decoration: none;
 }

@@ -34,7 +34,7 @@ export default function PlacidChatField({ user }) {
           flexDirection: "column",
           alignItems: "end",
           paddingLeft: isSmallScreen ? "10px" : "23vw",
-          marginLeft: isSmallScreen ? "80px" : "0",
+          marginLeft: isSmallScreen ? "80px" : "5px",
         }}
       >
         {messages?.map((e, index) => {

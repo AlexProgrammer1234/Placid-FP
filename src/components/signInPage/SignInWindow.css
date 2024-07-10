@@ -59,14 +59,14 @@
   justify-content: center;
 }
 
-img {
+.signINWindowLogo {
   height: clamp(40px, 6vw, 60px);
   margin-top: 2%;
   margin-left: 10%;
 }
 
 @media (max-width: 1200px){
-  img{
+  .signINWindowLogo{
     height: 70px;
   }
 
