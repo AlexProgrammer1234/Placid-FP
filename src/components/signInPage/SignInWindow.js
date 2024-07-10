@@ -1,10 +1,12 @@
-import { Button, Paper } from "@mui/material";
+import { Button, Paper, useMediaQuery } from "@mui/material";
 import { signInWithGoogle } from "../firebaseConfiguration/FirebaseConfig";
 import GoogleIcon from "@mui/icons-material/Google";
 import logo from "../img/Logo.svg";
 import "./SignInWindow.css";
 
 export default function SignInWindow() {
+  const isSmallScreen = useMediaQuery("(max-width:1200px)");
+
   return (
     <Paper
       elevation={3}
@@ -16,6 +18,7 @@ export default function SignInWindow() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        flexDirection: isSmallScreen ? "column" : "row",
       }}
     >
       <div className="logoBox">
@@ -32,6 +35,10 @@ export default function SignInWindow() {
           fontFamily: `"Ubuntu", sans-serif`,
           fontStyle: "normal",
           "&:hover": { background: "rgba(255, 255, 255, 0.394)" },
+          width: isSmallScreen ? "70%" : "auto",
+          marginTop: isSmallScreen ? "20px" : "0",
+          fontSize: isSmallScreen ? "18px" : "",
+          marginLeft: isSmallScreen ? "" : "50px",
         }}
         onClick={signInWithGoogle}
         endIcon={<GoogleIcon />}

@@ -1,6 +1,8 @@
-import { Paper } from "@mui/material";
+import { Paper, useMediaQuery } from "@mui/material";
 
 export default function PageNotFound() {
+  const isSmallScreen = useMediaQuery("(max-width: 1200px)");
+
   return (
     <Paper
       sx={{
@@ -13,7 +15,7 @@ export default function PageNotFound() {
         alignItems: "center",
         justifyContent: "center",
         color: "white",
-        fontSize: "2vw",
+        fontSize: isSmallScreen ? "30px" : "2vw",
       }}
     >
       Select a page
