@@ -28,21 +28,13 @@ body {
   animation: svganimbottom 1s linear 1;
 }
 
-.glitch-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #000000;
-}
-
 .glitch {
   opacity: 0;
   color: white;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-10%, -50%);
+  transform: translate(-40%, -50%);
   font-size: clamp(30px, 5vw, 55px);
   animation: h1anim 0.5s linear 1s 1 forwards;
   z-index: 1;
@@ -141,10 +133,10 @@ body {
     transform: translateX(0);
     opacity: 0.9;
   }
-  100%{
+  100% {
     margin-top: 5px;
     scale: 0.4;
-    transform: translateX(-10vw);
+    transform: translateX(-85%);
     opacity: 0.8;
   }
 }
@@ -164,5 +156,34 @@ body {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  @keyframes svgsmaller {
+    0% {
+      scale: 1;
+      transform: translateX(0);
+    }
+    30% {
+      scale: 0.9;
+      transform: translateX(0);
+    }
+    40% {
+      scale: 0.9;
+      transform: translateX(0);
+      opacity: 0.9;
+    }
+    100% {
+      margin-top: 5px;
+      scale: 0.5;
+      transform: translateX(-90%);
+      opacity: 0.8;
+    }
+  }
+
+  .glitch {
+    font-size: 70px;
+    transform: translate(-20%, -50%);
   }
 }
