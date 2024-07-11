@@ -1,13 +1,16 @@
-import { Paper } from "@mui/material";
+import { Paper, useMediaQuery } from "@mui/material";
 import "./Message.css";
 
 export default function Message({ name, text, color, time, userAccountIcon }) {
+  const isSmallScreen = useMediaQuery("(max-width: 1200px)");
+
   return (
     <Paper
       elevation={0}
       sx={{
         background: "none",
         alignSelf: color === "colorful" ? "end" : "start",
+        maxWidth: isSmallScreen ? "60vw" : "30vw",
       }}
       className="message"
     >
