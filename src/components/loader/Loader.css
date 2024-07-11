@@ -11,34 +11,33 @@ body {
   display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-animation: hideAnimation 0.5s ease 4.5s 1;
-          animation: hideAnimation 0.5s ease 4.5s 1;
+  animation: hideAnimation 0.5s ease 4.5s 1;
 }
 
 .logo {
   width: clamp(200px, 20vw, 300px);
   height: clamp(200px, 12vh, 250px);
   -webkit-animation: svgsmaller 2s ease-out 1 forwards;
-          animation: svgsmaller 2s ease-out 1 forwards;
-  margin-right: 10px;
+  animation: svgsmaller 2s ease-out 1 forwards;
 }
 
 .logo g #top {
   opacity: 1;
   -webkit-animation: svganimtop 1s linear 1;
-          animation: svganimtop 1s linear 1;
+  animation: svganimtop 1s linear 1;
 }
 
 .logo g #bottom {
   opacity: 1;
   -webkit-animation: svganimbottom 1s linear 1;
-          animation: svganimbottom 1s linear 1;
+  animation: svganimbottom 1s linear 1;
 }
 
 .glitch {
@@ -48,11 +47,11 @@ body {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-40%, -50%);
-      -ms-transform: translate(-40%, -50%);
-          transform: translate(-40%, -50%);
+  -ms-transform: translate(-40%, -50%);
+  transform: translate(-40%, -50%);
   font-size: clamp(30px, 5vw, 55px);
   -webkit-animation: h1anim 0.5s linear 1s 1 forwards;
-          animation: h1anim 0.5s linear 1s 1 forwards;
+  animation: h1anim 0.5s linear 1s 1 forwards;
   z-index: 1;
   letter-spacing: 3px;
   font-family: "Ubuntu", sans-serif;
@@ -72,8 +71,9 @@ body {
 }
 
 .glitch:before {
-  -webkit-animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-          animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  -webkit-animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+    infinite;
+  animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
   color: #00ffff;
   z-index: -1;
 }
@@ -88,71 +88,71 @@ body {
 @-webkit-keyframes glitch-it {
   0% {
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
   }
   20% {
     -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
   }
   40% {
     -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
   }
   60% {
     -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
   }
   80% {
     -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
   }
   to {
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
   }
 }
 
 @keyframes glitch-it {
   0% {
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
   }
   20% {
     -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
   }
   40% {
     -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
   }
   60% {
     -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
   }
   80% {
     -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
   }
   to {
     -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
   }
 }
 
 @-webkit-keyframes svganimtop {
   0% {
     -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    transform: translateX(50%);
     opacity: 0;
   }
   50% {
     -webkit-transform: translateX(-8%);
-            transform: translateX(-8%);
+    transform: translateX(-8%);
     opacity: 1;
   }
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -160,17 +160,17 @@ body {
 @keyframes svganimtop {
   0% {
     -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    transform: translateX(50%);
     opacity: 0;
   }
   50% {
     -webkit-transform: translateX(-8%);
-            transform: translateX(-8%);
+    transform: translateX(-8%);
     opacity: 1;
   }
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -178,17 +178,17 @@ body {
 @-webkit-keyframes svganimbottom {
   0% {
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     opacity: 0;
   }
   50% {
     -webkit-transform: translateX(8%);
-            transform: translateX(8%);
+    transform: translateX(8%);
     opacity: 1;
   }
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -196,17 +196,17 @@ body {
 @keyframes svganimbottom {
   0% {
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     opacity: 0;
   }
   50% {
     -webkit-transform: translateX(8%);
-            transform: translateX(8%);
+    transform: translateX(8%);
     opacity: 1;
   }
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -215,24 +215,24 @@ body {
   0% {
     scale: 1;
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   30% {
     scale: 0.9;
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   40% {
     scale: 0.9;
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 0.9;
   }
   100% {
     margin-top: 5px;
     scale: 0.4;
     -webkit-transform: translateX(-85%);
-            transform: translateX(-85%);
+    transform: translateX(-85%);
     opacity: 0.8;
   }
 }
@@ -241,24 +241,24 @@ body {
   0% {
     scale: 1;
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   30% {
     scale: 0.9;
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   40% {
     scale: 0.9;
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 0.9;
   }
   100% {
     margin-top: 5px;
     scale: 0.4;
     -webkit-transform: translateX(-85%);
-            transform: translateX(-85%);
+    transform: translateX(-85%);
     opacity: 0.8;
   }
 }
@@ -303,58 +303,45 @@ body {
   @-webkit-keyframes svgsmaller {
     0% {
       scale: 1;
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
     }
     30% {
       scale: 0.9;
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
     }
-    40% {
+    35% {
       scale: 0.9;
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
       opacity: 0.9;
     }
     100% {
       margin-top: 5px;
-      scale: 0.5;
-      -webkit-transform: translateX(-90%);
-              transform: translateX(-90%);
-      opacity: 0.8;
+      scale: 0.7;
+      opacity: 0;
     }
   }
   @keyframes svgsmaller {
     0% {
       scale: 1;
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
     }
     30% {
       scale: 0.9;
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
     }
-    40% {
+    35% {
       scale: 0.9;
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
       opacity: 0.9;
     }
     100% {
       margin-top: 5px;
-      scale: 0.5;
-      -webkit-transform: translateX(-90%);
-              transform: translateX(-90%);
-      opacity: 0.8;
+      scale: 0.7;
+      opacity: 0;
     }
   }
 
   .glitch {
     font-size: 70px;
     -webkit-transform: translate(-20%, -50%);
-        -ms-transform: translate(-20%, -50%);
-            transform: translate(-20%, -50%);
+    -ms-transform: translate(-20%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    -webkit-animation: h1anim 0.5s linear 2s forwards;
+            animation: h1anim 0.5s linear 2s forwards;
   }
 }
