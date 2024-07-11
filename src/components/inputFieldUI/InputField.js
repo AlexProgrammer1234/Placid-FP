@@ -79,6 +79,7 @@ export default function InputField({ setMessages, messages, user }) {
           opacity: "0.9",
           border: "1px solid rgba(255, 255, 255, 0.1)",
           borderRadius: "50vh",
+          backdropFilter: "blur(100px)",
         }}
         elevation={3}
         className="inputField"
