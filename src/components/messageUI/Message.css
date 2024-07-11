@@ -18,11 +18,15 @@
 }
 
 .message{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .messageUserIcon{
   height: 30px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   margin-right: 5px;
 }

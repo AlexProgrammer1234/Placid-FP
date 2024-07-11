@@ -5,10 +5,13 @@
   cursor: pointer;
   position: relative;
   opacity: 0.8;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .siteName:hover {
+  background: -o-linear-gradient(305deg, #ff00ff, #00ffff);
   background: linear-gradient(145deg, #ff00ff, #00ffff);
   -webkit-background-clip: text;
   color: transparent;
@@ -16,11 +19,14 @@
 
 .userPhoto {
   height: 30px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   margin-top: 5px;
   margin-right: 5px;
   border: 5px solid rgba(255, 255, 255, 0);
-  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+       -o-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .userPhoto:hover {
@@ -29,6 +35,9 @@
 }
 
 .siteLogoBox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
