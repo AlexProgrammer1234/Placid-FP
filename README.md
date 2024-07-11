@@ -78,7 +78,7 @@
 
         UserMenu.js
 
-        UserMenu.js
+        UserMenu.css
 
 ## Використане API
 
