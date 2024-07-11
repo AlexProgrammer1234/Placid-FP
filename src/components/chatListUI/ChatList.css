@@ -3,12 +3,21 @@
   text-decoration: none;
   padding: 15px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  transition-duration: 0.2s;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .chatListBtns:hover {
@@ -17,7 +26,9 @@
 
 .chatListBtns:active {
   opacity: 0.7;
-  transition-duration: 0;
+  -webkit-transition-duration: 0;
+       -o-transition-duration: 0;
+          transition-duration: 0;
 }
 
 .info {
@@ -37,11 +48,13 @@
   top: -10px;
   left: 8px;
   right: 8px;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
 }
 
 @media (max-width: 1200px) {
   .chatListBtns {
-    border-radius: 30%;
+    -webkit-border-radius: 30%;
+            border-radius: 30%;
   }
 }
