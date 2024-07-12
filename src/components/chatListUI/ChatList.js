@@ -5,7 +5,7 @@ import InfoIcon from "@mui/icons-material/Info";
 
 export default function ChatList() {
   const isSmallScreen = useMediaQuery("(max-width: 1200px)");
-  
+
   return (
     <Paper
       elevation={isSmallScreen ? 0 : 3}
@@ -23,7 +23,9 @@ export default function ChatList() {
         zIndex: "10",
         width: isSmallScreen ? "50px" : "20vw",
         margin: isSmallScreen ? "60px 0 0 5px" : " 70px 0 10px 15px",
+        paddingBottom: "80px",
       }}
+      className="chatListField"
     >
       <NavLink className="chatListBtns" to={"chats/placidchat/demo"}>
         {isSmallScreen ? "PC" : "Placid Chat"}
